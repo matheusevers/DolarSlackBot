@@ -12,7 +12,6 @@ const port = 3000;
 const getDolarValue = async (res) => {
     try {
         const cotacao = await axios.get("https://economia.awesomeapi.com.br/last/USD-BRL");
-        console.log(parseFloat(cotacao.data.USDBRL.high).toFixed(2))
       
         if (cotacao.status === 200) {
             console.log('Sending slack message!');
