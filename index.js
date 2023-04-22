@@ -37,5 +37,6 @@ const job = new CronJob(
     'America/Sao_Paulo'
 );
 // Use this if the 4th param is default value(false)
+console.log("Starting job...")
 job.start()
 
