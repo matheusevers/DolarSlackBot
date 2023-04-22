@@ -8,12 +8,6 @@ const app = express();
 
 const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send('Hello World, from express');
-    console.log(' bl;a')
-});
-
-app.listen(port, () => console.log(`Listening on port ${port}!`))
 
 const getDolarValue = async () => {
     try {
@@ -40,6 +34,15 @@ const getDolarValue = async () => {
     }
 }
 
+app.get('/', (req, res) => {
+    console.log('Running job...')
+    getDolarValue()
+});
+
+app.listen(port, () => console.log(`Listening on port ${port}!`))
+
+
+
 // const job = new CronJob(
 //     '0 */1 * * * *',
 //     async function() {
@@ -50,6 +53,6 @@ const getDolarValue = async () => {
 //     'America/Sao_Paulo'
 // );
 // Use this if the 4th param is default value(false)
-console.log("Starting job...")
+
 // job.start()
 
