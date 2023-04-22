@@ -1,6 +1,18 @@
-const CronJob = require('cron').CronJob;
+// const CronJob = require('cron').CronJob;
 const axios = require('axios');
+const express = require('express');
 require('dotenv').config();
+
+
+const app = express();
+
+const port = 3000;
+
+app.get('/', (req, res) => {
+    res.send('Hello World, from express');
+});
+
+app.listen(port, () => console.log(`Listening on port ${port}!`))
 
 const getDolarValue = async () => {
     try {
@@ -27,16 +39,16 @@ const getDolarValue = async () => {
     }
 }
 
-const job = new CronJob(
-    '0 */1 * * * *',
-    async function() {
-        getDolarValue()
-    },
-    null,
-    false,
-    'America/Sao_Paulo'
-);
+// const job = new CronJob(
+//     '0 */1 * * * *',
+//     async function() {
+//         getDolarValue()
+//     },
+//     null,
+//     false,
+//     'America/Sao_Paulo'
+// );
 // Use this if the 4th param is default value(false)
 console.log("Starting job...")
-job.start()
+// job.start()
 
