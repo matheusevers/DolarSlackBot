@@ -1,0 +1,11 @@
+{
+  "name": "DolarHojeBot",
+  "version": "1.0.0",
+  "description": "Bot for Slack to post current dolar to real value daily",
+  "main": "index.js",
+  "author": "Evers",
+  "license": "MIT",
+  "dependencies": {
+    "cron": "^2.3.0"
+  }
+}
