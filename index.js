@@ -10,6 +10,7 @@ const port = 3000;
 
 app.get('/', (req, res) => {
     res.send('Hello World, from express');
+    console.log(' bl;a')
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}!`))
